@@ -47,7 +47,7 @@ void connexionetu(int color,int erreur,int choix)
 		notif(color,"Enregistrement effectue !",choix);
 	if (erreur==9)
 		notif(color,"Login/Mot de passe incorrect",choix);
-	printf("\t");
+	printf("    ");
 	scanf("%d",&choix);
 	switch (choix){
 	case 1:
@@ -103,9 +103,9 @@ void idetu(int color,int erreur,int choix)
 	choixligne("Login :",color);
 	choixligne("Mot de passe:",color);
 	lastline(2,color);
-	system("tput cup 6 25");
+	system("tput cup 6 19");
 	scanf("%s",&id);
-	system("tput cup 9 33");
+	system("tput cup 9 25");
 	system("stty -echo");
 	scanf("%s",&mdp);
 	system("stty echo");
@@ -136,9 +136,9 @@ void idadmin(int color,int erreur,int choix)
 	choixligne("Login :",color);
 	choixligne("Mot de passe:",color);
 	lastline(2,color);
-	system("tput cup 6 25");
+	system("tput cup 6 19");
 	scanf("%s",&id);
-	system("tput cup 9 33");
+	system("tput cup 9 25");
 	system("stty -echo");
 	scanf("%s",&mdp);
 	system("stty echo");
@@ -165,27 +165,27 @@ Etudiant formulaire(int color,int *erreur)
 	choixligne("Nom:",color);
 	choixligne("Prenom:",color);
 	choixligne("Date de naissance:",color);
-	choixligne("Echelon boursié:",color);
+	choixligne("Echelon boursier:",color);
 	choixligne("Handicap (non=0/oui=1)",color);
 	lastline(1,color);
 	normal();
-	system("tput cup 4 25");
+	system("tput cup 4 17");
 	scanf("%s",&etu.nom);
-	system("tput cup 7 25");
+	system("tput cup 7 20");
 	scanf("%s",&etu.prenom);
-	system("tput cup 10 41");
+	system("tput cup 10 32");
 	scanf("%d",&etu.naissance.jour);
-	system("tput cup 10 42");
+	system("tput cup 10 40");
 	printf("/");
-	system("tput cup 10 43");
+	system("tput cup 10 40");
 	scanf("%d",&etu.naissance.mois);
-	system("tput cup 10 44");
+	system("tput cup 10 40");
 	printf("/");
 	system("tput cup 10 46");
 	scanf("%d",&etu.naissance.annee);
-	system("tput cup 13 41");
+	system("tput cup 13 29");
 	scanf("%d",&etu.bourse);
-	system("tput cup 16 41");
+	system("tput cup 16 38");
 	scanf("%d",&etu.handicap);
 	system("tput cup 19 1");
 	if (strlen(etu.prenom)>30)
@@ -240,9 +240,9 @@ Etudiant formulaire(int color,int *erreur)
 		choixligne("Login :",color);
 		choixligne("Mot de passe:",color);
 		lastline(2,color);
-		system("tput cup 9 25");
+		system("tput cup 9 20");
 		scanf("%s",&etu.id);
-		system("tput cup 12 33");
+		system("tput cup 12 26");
 		system("stty -echo");
 		scanf("%s",&etu.mdp);
 		system("stty echo");

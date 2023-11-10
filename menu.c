@@ -25,7 +25,7 @@ void menu(int color,int erreur,int choix)
 	default:
 		notif(color,"est un choix incorrect.",choix);
 	}
-	printf("\t");
+	printf("    ");
 	scanf("%d%*c",&choix);
 	switch (choix){
 	case 1:
@@ -67,7 +67,7 @@ void admin(int color,int erreur,int choix)
 		lastline(2,color);
 	else
 		notif(color,"est un choix incorrect.",choix);
-	printf("\t");
+	printf("    ");
 	scanf("%d%*c",&choix);
 	switch (choix){
 	case 1:
@@ -113,7 +113,7 @@ void menuetu (int color, int erreur, int choix, int dossier)
 		notif(color,"Vous avez dejà 2 demandes !",-1);
 	else
 		notif(color,"est un choix incorrect.",choix);
-	printf("\t");
+	printf("    ");
 	scanf("%d%*c",&choix);
 	switch (choix){
 	case 1:
@@ -160,7 +160,7 @@ void menuetu (int color, int erreur, int choix, int dossier)
 void entreligne (int color)
 {
 	ombre();
-	printf("\t");
+	printf("    ");
 	bold();
 	initcolor(color);
 }
@@ -177,37 +177,37 @@ void affDemEtu (int color, int Dem1, int Dem2, int dossier)
 		printf("\n");
 	firstline(color);
 	lignevide(1,color);
-	printf("\t");
+	printf("    ");
 	bold();
 	initcolor(color);
 	if(Dem1==-1)
 	{
-		printf("\tNuméro de Demande 1: VIDE\t\t\t");
+		printf("    Numéro de Demande 1: VIDE            ");
 		entreligne(color);
-		printf("\tNuméro cité demandée: VIDE\t\t\t");
+		printf("    Numéro cité demandée: VIDE            ");
 	}
 	else
 	{
-		printf("\tNuméro de Demande 1: %.5d\t\t\t", t->tabDemande[Dem1]->numDem);
+		printf("    Numéro de Demande 1: %.5d            ", t->tabDemande[Dem1]->numDem);
 		entreligne(color);
-		printf("\tNuméro cité demandée: %.5d\t\t\t", d1->numCite);
+		printf("    Numéro cité demandée: %.5d            ", d1->numCite);
 	}
 	ombre();
 	lignevide(1,color);
-	printf("\t");
+	printf("    ");
 	initcolor(color);
 	bold();
 	if(Dem2==-1)
 	{
-		printf("\tNuméro de Demande 2: VIDE\t\t\t");
+		printf("    Numéro de Demande 2: VIDE            ");
 		entreligne(color);
-		printf("\tNuméro cité demandée: VIDE\t\t\t");
+		printf("    Numéro cité demandée: VIDE            ");
 	}
 	else
 	{
-		printf("\tNuméro de Demande 2: %.5d\t\t\t", t->tabDemande[Dem2]->numDem);
+		printf("    Numéro de Demande 2: %.5d            ", t->tabDemande[Dem2]->numDem);
 		entreligne(color);
-		printf("\tNuméro cité demandée: %.5d\t\t\t", d2->numCite);
+		printf("    Numéro cité demandée: %.5d            ", d2->numCite);
 	}
 	ombre();	
 	
@@ -215,10 +215,10 @@ void affDemEtu (int color, int Dem1, int Dem2, int dossier)
 void pause(int color, int dossier)
 {
 	lignevide(1,color);
-	printf("\t");
+	printf("    ");
 	initcolor(color);
 	bold();
-	printf("\tAppuyer sur entrée pour revenir au menu.\t");
+	printf("    Appuyer sur entrée pour revenir au menu.    ");
 	ombre();
 	lastline(2,color);
 	getchar();
@@ -229,10 +229,10 @@ int choixdemsuppr(int color)
 {
 	int c;
 	lignevide(1,color);
-	printf("\t");
+	printf("    ");
 	initcolor(color);
 	bold();
-	printf("\tNuméro de la demande à supprimée :\t\t");
+	printf("    Numéro de la demande à supprimée :        ");
 	ombre();
 	lastline(2,color);
 	scanf("%d",&c);
@@ -243,7 +243,6 @@ int choixdemsuppr(int color)
 void creationdemande(int color, int erreur, int  choix, int dossier)
 {
 	int Dem1=-1,Dem2=-1,a,numCite;
-	int i;
 	TabDemande *t=initTabDemande();
 	rechDemandesEtu (dossier, t->tabDemande, t->nbDemande, &Dem1, &Dem2);
 	clear();
@@ -253,7 +252,7 @@ void creationdemande(int color, int erreur, int  choix, int dossier)
 	a=1;
 	choixligne("N° de Cite demandée :",color);
 	lastline(2,color);
-	printf("\t");
+	printf("    ");
 	system("tput cup 6 37");
 	scanf("%d%*c",&numCite);
 	if (Dem1==-1 || Dem2==-1)
@@ -277,7 +276,7 @@ void chambres(int color,int erreur,int choix)
 	a=1;
 	a=line(a,"Retour",color);
 	lastline(2,color);
-	printf("\t");
+	printf("    ");
 	scanf("%d%*c",&choix);
 	if (choix==1)
 		admin(color,0,choix);
@@ -295,7 +294,7 @@ void Sauvegarde(int color,int erreur,int choix)
 	a=1;
 	a=line(a,"Retour",color);
 	lastline(2,color);
-	printf("\t");
+	printf("    ");
 	scanf("%d%*c",&choix);
 	if (choix==1)
 		admin(color,0,choix);
@@ -315,7 +314,7 @@ void demande(int color,int erreur,int choix)
 	a=line(a,"Etudiant :",color);
 	a=line(a,"Retourner au menu",color);
 	lastline(2,color);
-	printf("\t");
+	printf("    ");
 	scanf("%d%*c",&choix);
 	if (choix==1)
 		admin(color,0,choix);
@@ -342,7 +341,7 @@ int perso(int color,int erreur,int choix)
 		lastline(2,color);
 	else
 		notif(color,"est un choix incorrect.",choix);
-	printf("\t");
+	printf("    ");
 	scanf("%d%*c",&choix);
 	if (choix >=1 && choix<=5)
 	{
@@ -396,10 +395,9 @@ void ombre(void)
 //Créé une ligne vide de couleur choisie SANS ombre
 void firstline(int color)
 {
-	int i;
-	printf("\t");
+	printf("    ");
 	initcolor(color);
-	printf("\t\t\t\t\t\t\t");
+	printf("                                       ");
 	couleur(0);
 	printf("\n");
 	
@@ -411,9 +409,9 @@ void lignevide(int nombre,int color)
 	int i;
 	for (i=0;i<nombre;i++)
 	{
-		printf("\t");
+		printf("    ");
 		initcolor(color);
-		printf("\t\t\t\t\t\t\t");
+		printf("                                       ");
 		ombre();
 	}
 }
@@ -423,40 +421,24 @@ int line(int a, char chaine[],int color)
 {
 	int taille=strlen(chaine);
 	lignevide(1,color);
-	printf("\t");
+	printf("    ");
 	bold();
 	initcolor(color);
+	int windowSize = 32;
 	if (a>0)
 	{
-		printf("\t%d) %s",a,chaine);
-		if (taille >= 20)
-		printf("\t\t\t");
-		else
-		{
-			if (taille > 13)
-			printf("\t\t\t\t");
-			else
-			{
-				if (taille >= 5)
-					printf("\t\t\t\t\t");
-				else
-					printf("\t\t\t\t\t\t");
-			}
-		}
+		printf("    %d) %s",a,chaine);
 	}
 	else
 	{
-		printf("\t%s",chaine);
-		if (taille >= 15)
-		printf("\t\t\t\t");
-		else
-		{
-			if (taille >= 8)
-			printf("\t\t\t\t\t");
-			else
-			printf("\t\t\t\t\t\t");
-		}
+		printf("    %s",chaine);
+		windowSize += 3;
 	}
+
+	for (int i = 0; i < windowSize - taille; i ++) {
+		printf(" ");
+	}
+
 	shadow();
 	printf(" ");
 	couleur(0);
@@ -470,24 +452,21 @@ int line(int a, char chaine[],int color)
 //Fonction pour créer une ligne avec un message et une réponse
 void choixligne(char chaine[],int color)
 {
+	int windowSize = 32;
 	int taille=strlen(chaine);
 	lignevide(1,color);
-	printf("\t");
+	printf("    ");
 	bold();
 	initcolor(color);
-	printf("\t%s\t",chaine);
+	printf("    %s    ",chaine);
 	couleur(0);
-	printf("\t\t");
+	printf("        ");
 	initcolor(color);
-	if (taille<8)
-		printf("\t\t\t");
-	else
-	{
-		if(taille<16)
-			printf("\t\t");
-		else
-			printf("\t");
+
+	for (int i = 0; i < windowSize - taille - 9; i ++) {
+		printf(" ");
 	}
+
 	shadow();
 	printf(" ");
 	couleur(0);
@@ -504,9 +483,9 @@ void lastline(int nombre, int color)
 	{
 		lignevide(1,color);
 	}
-	printf("\t ");
+	printf("     ");
 	shadow();
-	printf("\t\t\t\t\t\t\t ");
+	printf("                                       ");
 	couleur(0);
 	printf("\n");
 	
@@ -565,37 +544,37 @@ void notif(int color,char message[],int choix)
 {
 	int taille=strlen(message);
 	lignevide(1,color);
-	printf("\t ");
+	printf("     ");
 	shadow();
-	printf("\t\t\t");
+	printf("            ");
 	red();
-	printf("\t\t\t\t");
+	printf("                ");
 	ombre();
 	couleur(0);
-	printf("\t\t\t\t");
+	printf("                ");
 	red();
 	if (choix!=-1)
 	printf("  %d %s",choix,message);
 	else
 	printf("  %s",message);
 	if (taille>21)
-		printf("\t");
+		printf("    ");
 	else
 	{
 		if (taille>13)
-			printf("\t\t");
+			printf("        ");
 		else
-			printf("\t\t");
+			printf("        ");
 	}
 	ombre();
 	couleur(0);
-	printf("\t\t\t\t");
+	printf("                ");
 	red();
-	printf("\t\t\t\t");
+	printf("                ");
 	ombre();
-	printf("\t\t\t\t ");
+	printf("                 ");
 	shadow();
-	printf("\t\t\t\t ");
+	printf("                 ");
 	couleur(0);
 
 }

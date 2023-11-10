@@ -126,6 +126,19 @@ Etudiant formulaire(int color,int *erreur);
 void idetu(int color,int erreur,int choix);
 void creationid(int color, char *id, char *mdp);
 
+//Fonctions de couleur
+void clear(void);
+void couleur(int color);
+void normal(void);
+void bold(void);
+void blue(void);
+void green(void);
+void yellow(void);
+void cyan(void);
+void dark(void);
+void red(void);
+void shadow(void);
+
 //Fonctions de chargement
 void demarrage(void);
 
